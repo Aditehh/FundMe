@@ -2,15 +2,16 @@ import React from 'react'
 
 const Navbar = () => {
     return (
-        <nav className='flex justify-around bg-gray-700 text-white h-20  items-center'>
-            <div className="logo text-2xl font-bold cursor-pointer">FundMe</div>
+        <nav className='flex justify-around bg-[#222831] text-white h-20  items-center'>
+            <div className="logo text-2xl text-[#DFD0B8] font-bold cursor-pointer">FundMe</div>
             <ul className='flex gap-5'>
-                <li className='hover:text-gray-300 cursor-pointer'>Home</li>
-                <li className='hover:text-gray-300 cursor-pointer'>About</li>
-                <li className='hover:text-gray-300 cursor-pointer'>Contact</li>
+                <li className='text-[#DFD0B8] text-lg cursor-pointer'>Home</li>
+                <li className='text-[#DFD0B8] text-lg cursor-pointer'>About</li>
+                <li className='text-[#DFD0B8] text-lg cursor-pointer'>Contact</li>
             </ul>
         </nav>
     )
 }
 
 export default Navbar
+

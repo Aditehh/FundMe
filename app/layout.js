@@ -15,7 +15,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={inter.className}>
         <Navbar />
-        <div className="min-h-screen">
+        <div className="min-h-screen bg-[#393E46]">
           {children}
         </div>
         <Footer />
