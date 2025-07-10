@@ -20,16 +20,22 @@ export default function Home() {
 
       <div className="bg-[#948979] h-[calc(100vh-12vh)] flex items-center justify-center p-10 ">
         <div class=" bg-white flex flex-col rounded-3xl  text-[#dfd0b8] dark:bg-gray-800 dark:border-gray-700 h-[85vh] w-[82vw] p-3 gap-5  md:items-center md:p-7">
-          <div className="text-lg text-[#dfd0b85a] font-semibold">
+          <div className="text-lg text-[#dfd0b85a] font-semibold md:text-2xl  ">
             Support
           </div>
-          <div className="text-4xl font-semibold text-[#dfd0b8]">
 
-            Give your audience
-            an easy way to say thanks.
+          <div className="text-4xl font-semibold text-[#dfd0b8] md:text-6xl">
+
+            <div>
+              Give your audience
+            </div>
+            <div>
+              an easy way to say thanks.
+            </div>
+
           </div>
 
-          <div className="text-sm text-[#dfd0b8b4]">
+          <div className="text-sm  text-[#dfd0b8b4]">
             Fuel your code with JavaJuice.
             Let your fans support you with a shot of digital caffeine quick payments, kind messages, and zero friction.
           </div>
