@@ -3,7 +3,7 @@ import Image from "next/image";
 export default function Home() {
   return (
     <>
-      <div className="flex gap-3 justify-center flex-col items-center text-[#DFD0B8] h-[91.3vh]">
+      <div className="flex gap-3 justify-center flex-col items-center text-[#DFD0B8] h-[70vh]">
         <div className="font-bold text-5xl">Fund the devs</div>
         <div className="text-xl">
           A crowdfunding platform for developers. Get funded by your fans and followers. Start Now!!!
@@ -17,9 +17,9 @@ export default function Home() {
 
       {/* first section division here */}
 
-
-      <div className="bg-[#948979] h-[70vh] md:h-[calc(100vh-12vh)] flex items-center justify-center p-10 ">
-        <div class=" bg-white flex flex-col rounded-3xl  text-[#dfd0b8] dark:bg-gray-800 dark:border-gray-700 md:h-[85vh] h-[55vh] w-[82vw] p-3 gap-5 md:gap-8 text-center md:items-center md:p-7">
+<div>
+      <div className="bg-[#948979] h-[72vh] md:h-[calc(100vh-12vh)] flex items-center justify-center p-10 ">
+        <div class=" bg-white flex flex-col rounded-3xl  text-[#dfd0b8] dark:bg-gray-800 dark:border-gray-700 md:h-[85vh] h-[65vh] w-[82vw] p-3 gap-5 md:gap-8 md:text-center md:items-center md:p-7">
           <div className="text-lg text-[#dfd0b85a] font-semibold md:text-2xl  ">
             Support
           </div>
@@ -40,10 +40,24 @@ export default function Home() {
             Fuel your code with JavaJuice. Let your fans support you with a shot of digital caffeine quick payments, kind messages, and zero friction.
           </div>
         </div>
-
       </div>
 
+
+</div>
+     
+
+    
 
     </>
   );
 }
+
+
+// JavaJuice is for creators.  
+// Not businesses. Not brands. Just real people doing cool things.
+
+// Your supporters are yours. We never touch them. You own the list.
+
+// Talk to real humans. Get paid instantly.
+
+// No jargon. No delays. Just pure creator fuel.
