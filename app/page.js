@@ -18,8 +18,8 @@ export default function Home() {
       {/* first section division here */}
 
 
-      <div className="bg-[#948979] h-[calc(100vh-12vh)] flex items-center justify-center p-10 ">
-        <div class=" bg-white flex flex-col rounded-3xl  text-[#dfd0b8] dark:bg-gray-800 dark:border-gray-700 h-[85vh] w-[82vw] p-3 gap-5 md:gap-8  md:items-center md:p-7">
+      <div className="bg-[#948979] h-[70vh] md:h-[calc(100vh-12vh)] flex items-center justify-center p-10 ">
+        <div class=" bg-white flex flex-col rounded-3xl  text-[#dfd0b8] dark:bg-gray-800 dark:border-gray-700 md:h-[85vh] h-[55vh] w-[82vw] p-3 gap-5 md:gap-8 text-center md:items-center md:p-7">
           <div className="text-lg text-[#dfd0b85a] font-semibold md:text-2xl  ">
             Support
           </div>
@@ -36,9 +36,8 @@ export default function Home() {
 
           </div>
 
-          <div className="text-sm  text-[#dfd0b8b4] md:text-xl">
-            Fuel your code with JavaJuice.
-            Let your fans support you with a shot of digital caffeine quick payments, kind messages, and zero friction.
+          <div className="text-sm  text-[#dfd0b8b4] md:text-xl md:px-24 ">
+            Fuel your code with JavaJuice. Let your fans support you with a shot of digital caffeine quick payments, kind messages, and zero friction.
           </div>
         </div>
 
