@@ -14,7 +14,7 @@ const Login = () => {
             <div className="flex flex-col gap-2 items-center min-h-screen ">
 
                 <div class="w-full max-w-xs">
-                    <form className=" shadow-md rounded px-8 pt-6 pb-8 mb-4">
+                    <form className="shadow-[0_4px_0_0_rgba(255, 255, 255, 1)] rounded px-8 pt-6 pb-8 mb-4">
                         <div className="mb-4">
                             <label className="block text-[#DFD0B8] text-sm font-bold mb-2" for="username">
                                 Username
@@ -29,7 +29,7 @@ const Login = () => {
                             <p className="text-red-500 text-xs italic">Please choose a password.</p>
                         </div>
                         <div className="flex items-center justify-between">
-                            <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="button">
+                            <button onClick={() => signIn("credentials")} className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="button">
                                 Sign In
                             </button>
                             <a className="inline-block align-baseline font-bold text-sm text-blue-500 hover:text-blue-800" href="#">
@@ -125,7 +125,7 @@ const Login = () => {
                     </button>
 
 
-                    <button onClick={()=>signIn("github")}
+                    <button onClick={() => signIn("github")}
                         className="flex  items-center bg-[#DFD0B8] w-72 text-[#393E46] border border-gray-300 rounded-lg shadow-md max-w-xs px-6 py-2 text-sm font-bold  hover:bg-[#948979] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500">
                         <svg className="h-6 w-6 mr-2" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink"
                             viewBox="0 0 73 73" version="1.1">

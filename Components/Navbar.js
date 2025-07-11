@@ -5,8 +5,6 @@ import { useSession, signIn, signOut } from "next-auth/react"
 import Link from 'next/link'
 
 const Navbar = () => {
- 
-
      const { data: session } = useSession()
   if(session) {  
     return <>
