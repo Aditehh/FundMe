@@ -43,8 +43,8 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="bg-[#948979]">
-        <div>
+      {/* <div className="bg-[#948979] flex flex-col p-10">
+        <div className="text-xl font-bold ">
           <div>
             JavaJuice is for creators.
           </div>
@@ -67,7 +67,7 @@ export default function Home() {
         </div>
 
 
-      </div>
+      </div> */}
     </>
   );
 }
