@@ -11,7 +11,7 @@ export const authOptions = NextAuth({
             clientId: process.env.GITHUB_ID,
             clientSecret: process.env.GITHUB_SECRET
         }),
-
+        
         CredentialsProvider({
             name: "Domain Account",
             async authorize(credentials, req) {
