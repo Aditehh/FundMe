@@ -17,37 +17,57 @@ export default function Home() {
 
       {/* first section division here */}
 
-<div>
-      <div className="bg-[#948979] h-[72vh] md:h-[calc(100vh-12vh)] flex items-center justify-center p-10 ">
-        <div class=" bg-white flex flex-col rounded-3xl  text-[#dfd0b8] dark:bg-gray-800 dark:border-gray-700 md:h-[85vh] h-[65vh] w-[82vw] p-3 gap-5 md:gap-8 md:text-center md:items-center md:p-7">
-          <div className="text-lg text-[#dfd0b85a] font-semibold md:text-2xl  ">
-            Support
-          </div>
-
-          <div className="text-4xl font-semibold text-[#dfd0b8] md:text-6xl md:gap-5 md:flex md:flex-col ">
-
-            <div className="  md:mx-24">
-              Give your audience
+      <div>
+        <div className="bg-[#948979] h-[72vh] md:h-[calc(100vh-12vh)] flex items-center justify-center p-10 ">
+          <div class=" bg-white flex flex-col rounded-3xl  text-[#dfd0b8] dark:bg-gray-800 dark:border-gray-700 md:h-[85vh] h-[65vh] w-[82vw] p-3 gap-5 md:gap-8 md:text-center md:items-center md:p-7">
+            <div className="text-lg text-[#dfd0b85a] font-semibold md:text-2xl  ">
+              Support
             </div>
 
-            <div>
-              an easy way to say thanks.
+            <div className="text-4xl font-semibold text-[#dfd0b8] md:text-6xl md:gap-5 md:flex md:flex-col ">
+
+              <div className="  md:mx-24">
+                Give your audience
+              </div>
+
+              <div>
+                an easy way to say thanks.
+              </div>
+
             </div>
 
-          </div>
-
-          <div className="text-sm  text-[#dfd0b8b4] md:text-xl md:px-24 ">
-            Fuel your code with JavaJuice. Let your fans support you with a shot of digital caffeine quick payments, kind messages, and zero friction.
+            <div className="text-sm   text-[#dfd0b8b4] md:text-2xl md:px-24 ">
+              Fuel your code with JavaJuice. Let your fans support you with a shot of digital caffeine quick payments, kind messages, and zero friction.
+            </div>
           </div>
         </div>
       </div>
 
+      <div className="bg-[#948979]">
+        <div>
+          <div>
+            JavaJuice is for creators.
+          </div>
+          <div>
+            Just real people doing cool things.
+          </div>
+        </div>
 
-</div>
-     
 
-    
+        <div>
+          <div>
+            <div>Your supporters are yours. We never touch them. You own the list.</div>
+            <div> Talk to real humans. Get paid instantly.</div>
+          </div>
 
+          <div>
+            <div>No jargon. No delays. Just pure creator fuel.</div>
+            <div></div>
+          </div>
+        </div>
+
+
+      </div>
     </>
   );
 }
