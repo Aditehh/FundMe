@@ -2,7 +2,7 @@ import React from 'react'
 
 const Footer = () => {
     return (
-        <footer className='flex justify-between bg-[#222831] text-white h-12 px-5  items-center'>
+        <footer className='flex justify-between bg-[#393E46] text-white h-12 px-5  items-center'>
 
             <div className="logo">Copyright &copy; FundMe-All rights reserved</div>
             <ul className='flex gap-5'>
