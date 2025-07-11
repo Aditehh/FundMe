@@ -5,13 +5,17 @@ import { useSession, signIn, signOut } from "next-auth/react"
 import Link from 'next/link'
 
 const Navbar = () => {
-    const { data: session } = useSession()
-    if(session) {
-        return <>
-        Signed in as {session.user.email} <br/>
-        <button onclick={() => signOut()}> Sign out</button>
-        </>
-    }
+ 
+
+     const { data: session } = useSession()
+  if(session) {  
+    return <>
+      Signed in as {session.user.email} <br/>
+      <button onClick={() => signOut()}>Sign out</button>
+    </>
+  }
+   
+
     return (
         <nav className='flex  bg-[#393E46] text-white h-14  items-center justify-between p-3'>
             <div onclick="location.href='page.js';" className="logo text-xl md:text-3xl md:p-8 text-[#DFD0B8] font-bold cursor-pointer">JavaJuice</div>

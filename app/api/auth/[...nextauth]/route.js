@@ -1,7 +1,13 @@
 import NextAuth from 'next-auth'
 import GitHubProvider from "next-auth/providers/github";
 
-export default NextAuth({
+// export async function GET(request) { }
+
+// export async function HEAD(request) { }
+
+// export async function POST(request) { }
+
+export const authOptions = NextAuth({
     providers: [
         // OAuth authentication providers...
         // AppleProvider({
@@ -28,3 +34,5 @@ export default NextAuth({
         })
     ]
 })
+
+export { authOptions as GET, authOptions as POST };
