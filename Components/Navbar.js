@@ -12,7 +12,7 @@ const Navbar = () => {
 
   return (
     <nav className='flex  bg-[#393E46] text-white h-14  items-center justify-between p-3'>
-      <Link> <div className="logo text-xl md:text-3xl md:p-8 text-[#DFD0B8] font-bold cursor-pointer">JavaJuice</div> </Link>
+      <a> <div className="logo text-xl md:text-3xl md:p-8 text-[#DFD0B8] font-bold cursor-pointer">JavaJuice</div> </a>
 
 
       <ul className="flex gap-2 p-2 md:p-8 md:gap-5 items-center">
