@@ -14,7 +14,7 @@ const Navbar = () => {
 
   return (
     <nav className='flex  bg-[#393E46] text-white h-14  items-center justify-between p-3'>
-      <a> <div className="logo text-xl md:text-3xl md:p-8 text-[#DFD0B8] font-bold cursor-pointer">JavaJuice</div> </a>
+      <Link href={"/"} > <div className="logo text-xl md:text-3xl md:p-8 text-[#DFD0B8] font-bold cursor-pointer">JavaJuice</div> </Link>
 
 
       <ul className="flex gap-2 p-2 md:p-8 md:gap-5 items-center">
@@ -67,15 +67,7 @@ const Navbar = () => {
                       href="#"
                       className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
                     >
-                      Settings
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      href="#"
-                      className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-                    >
-                      Earnings
+                      My page
                     </a>
                   </li>
                   <li>

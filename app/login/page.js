@@ -1,9 +1,17 @@
 "use client"
 import React from 'react'
 import { useSession, signIn, signOut } from "next-auth/react"
+import { useRouter } from 'next/navigation'
 
 
 const Login = () => {
+    const { data: session } = useSession()
+
+    if(session) {
+       const router = useRouter()
+       router.push('/dashboard')
+    }
+
     return (
         <div className='text-white md:min-h-[10vh]'>
             <h2 className='font-extrabold text-center py-12 text-3xl'>
