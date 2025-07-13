@@ -1,6 +1,7 @@
 import NextAuth from 'next-auth'
 import GitHubProvider from "next-auth/providers/github";
-import CredentialsProvider from "next-auth/providers/credentials";
+import CredentialsProvider from "next-auth/providers/credentials"; 
+
 
 
 
@@ -21,12 +22,12 @@ export const authOptions = NextAuth({
                 return user
             },
             credentials: {
-                domain: {
-                    label: "Domain",
-                    type: "text ",
-                    placeholder: "CORPNET",
-                    value: "CORPNET",
-                },
+                // domain: {
+                //     label: "Domain",
+                //     type: "text ",
+                //     placeholder: "CORPNET",
+                //     value: "CORPNET",
+                // },
                 username: { label: "Username", type: "text ", placeholder: "jsmith" },
                 password: { label: "Password", type: "password" },
             },
