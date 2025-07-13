@@ -90,7 +90,7 @@ const Navbar = () => {
           )}
 
           <div>
-            {/* {!session && pathname !== "/login" && ( */}
+            {!session && pathname !== "/login" && (
             <Link href="/login">
               <button
                 type="button"
@@ -99,7 +99,7 @@ const Navbar = () => {
                 Login
               </button>
             </Link>
-            {/* )} */}
+            )} 
           </div>
 
 
