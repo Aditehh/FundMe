@@ -9,9 +9,9 @@ export default function Home() {
           A crowdfunding platform for developers. Get funded by your fans and followers. Start Now!!!
         </div>
         <div>
-          <button type="button" class=" text-gray-900 bg-gradient-to-r from-red-200 to-yellow-100 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-red-100 dark:focus:ring-yellow-400 font-medium rounded-lg text-lg px-5 py-2.5 text-center me-2 mb-2">Start Now</button>
+          <button type="button" className=" text-gray-900 bg-gradient-to-r from-red-200 to-yellow-100 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-red-100 dark:focus:ring-yellow-400 font-medium rounded-lg text-lg px-5 py-2.5 text-center me-2 mb-2">Start Now</button>
 
-          <button type="button" class=" text-gray-900 bg-gradient-to-r from-red-200 to-yellow-100 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-red-100 dark:focus:ring-yellow-100 font-medium rounded-lg text-lg px-5 py-2.5 text-center me-2 mb-2">Read More</button>
+          <button type="button" className=" text-gray-900 bg-gradient-to-r from-red-200 to-yellow-100 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-red-100 dark:focus:ring-yellow-100 font-medium rounded-lg text-lg px-5 py-2.5 text-center me-2 mb-2">Read More</button>
         </div>
       </div>
 
@@ -19,7 +19,7 @@ export default function Home() {
 
       <div>
         <div className="bg-[#948979] h-[72vh] md:h-[calc(100vh-12vh)] flex items-center justify-center p-10 ">
-          <div class=" bg-white flex flex-col rounded-3xl  text-[#dfd0b8] dark:bg-gray-800 dark:border-gray-700 md:h-[85vh] h-[65vh] w-[82vw] p-3 gap-5 md:gap-8 md:text-center md:items-center md:p-7">
+          <div className=" bg-white flex flex-col rounded-3xl  text-[#dfd0b8] dark:bg-gray-800 dark:border-gray-700 md:h-[85vh] h-[65vh] w-[82vw] p-3 gap-5 md:gap-8 md:text-center md:items-center md:p-7">
             <div className="text-lg text-[#dfd0b85a] font-semibold md:text-2xl  ">
               Support
             </div>

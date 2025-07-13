@@ -22,7 +22,7 @@ const Navbar = () => {
           {session ? (
             <div className="relative">
               <button
-                onClick={() => setshowdropdown(!showdropdown)}
+                onClick={() => setshowdropdown(!showdropdown)} onBlur={() => setshowdropdown(false)}
                 id="dropdownDefaultButton"
                 className="bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 text-gray-900 bg-gradient-to-r from-red-200 to-yellow-100 hover:bg-gradient-to-bl md:text-sm px-2.5 py-1 me-2 mb-2"
                 type="button"
@@ -56,7 +56,7 @@ const Navbar = () => {
                 >
                   <li>
                     <Link
-                      href="dashboard"
+                      href="/dashboard"
                       className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
                     >
                       Dashboard
@@ -71,13 +71,14 @@ const Navbar = () => {
                     </a>
                   </li>
                   <li>
-                    <a onClick={() => signOut()}
-                      href="#"
-                      className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-                    >
-                      Sign out
-                    </a>
-                  </li>
+  <button
+    onClick={() => signOut({ callbackUrl: "/" })}
+    className="block w-full text-left px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+  >
+    Sign out
+  </button>
+</li>
+
                 </ul>
               </div>
             </div>

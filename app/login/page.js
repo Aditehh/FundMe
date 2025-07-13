@@ -21,7 +21,7 @@ const Login = () => {
 
             <div className="flex flex-col gap-2 items-center min-h-screen ">
 
-                <div class="w-full max-w-xs">
+                <div className="w-full max-w-xs">
                     <form className="shadow-[0_4px_0_0_rgba(255, 255, 255, 1)] rounded px-8 pt-6 pb-8 mb-4">
                         <div className="mb-4">
                             <label className="block text-[#DFD0B8] text-sm font-bold mb-2" for="username">
