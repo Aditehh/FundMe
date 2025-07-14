@@ -76,12 +76,14 @@ const Navbar = () => {
                       </a>
                     </li>
                     <li>
+
                       <button
                         onClick={() => signOut()}
                         className="block w-full text-left px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
                       >
                         Sign out
                       </button>
+
                     </li>
                   </ul>
                 </div>
@@ -91,15 +93,15 @@ const Navbar = () => {
 
           <div>
             {!session && pathname !== "/login" && (
-            <Link href="/login">
-              <button
-                type="button"
-                className="text-gray-900 bg-gradient-to-r from-red-200 to-yellow-100 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-red-100 dark:focus:ring-yellow-100 font-medium rounded-lg text-sm md:text-lg px-2.5 py-1 text-center me-2 mb-2"
-              >
-                Login
-              </button>
-            </Link>
-            )} 
+              <Link href="/login">
+                <button
+                  type="button"
+                  className="text-gray-900 bg-gradient-to-r from-red-200 to-yellow-100 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-red-100 dark:focus:ring-yellow-100 font-medium rounded-lg text-sm md:text-lg px-2.5 py-1 text-center me-2 mb-2"
+                >
+                  Login
+                </button>
+              </Link>
+            )}
           </div>
 
 
