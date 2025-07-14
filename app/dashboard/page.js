@@ -7,9 +7,9 @@ const Dashboard = () => {
 
     const { data: session } = useSession()
   
-      if(session) {
+      if(!session) {
          const router = useRouter()
-         router.push('/dashboard')
+         router.push('/')
       }
   return (
     <div>
