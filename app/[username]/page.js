@@ -10,7 +10,7 @@ const Username = ({ params }) => {
         </div>
       </div>
 
-      <div className='flex-col text-white my-16 flex justify-center items-center'>
+      <div className='flex-col text-white my-16 flex justify-center items-center gap-2'>
         <div className='font-bold text-xl'>
           @{params.username}
         </div>
@@ -22,22 +22,27 @@ const Username = ({ params }) => {
         </div>
 
 
-        <div className='PaymentsAndSupporters flex gap-3 w-[80%]'>
-          <div className='supporters  bg-slate-600 '>
-            <ul>
-              <li>MEssi donated his whole networth to this worthless pissasheet</li>
-              <li>MEssi donated his whole networth to this worthless pissasheet</li>
-              <li>MEssi donated his whole networth to this worthless pissasheet</li>
-              <li>MEssi donated his whole networth to this worthless pissasheet</li>
-              <li>MEssi donated his whole networth to this worthless pissasheet</li>
+        <div className="PaymentsAndSupporters flex gap-4 w-[80%] mx-auto">
+          {/* Supporters Section */}
+          <div className="supporters bg-slate-600 p-4 rounded-lg w-1/2 max-h-64 overflow-y-auto">
+            <h2 className="text-white font-bold mb-2">Supporters</h2>
+            <ul className="text-white space-y-1 text-sm">
+              <li>Messi donated a generous amount to this project</li>
+              <li>Ronaldo became a top-tier supporter</li>
+              <li>Neymar shared this with all his fans</li>
+              <li>Marta endorsed this amazing idea</li>
+              <li>Iniesta quietly became a silent donor</li>
             </ul>
           </div>
 
-          <div className="payments bg-slate-600">
-sgdgdgf
+          {/* Payments Section */}
+          <div className="payments bg-slate-600 p-4 rounded-lg w-1/2">
+            <h2 className="text-white font-bold mb-2">Payments</h2>
+            <p className="text-white text-sm">Payment options and history will appear here.</p>
           </div>
         </div>
       </div>
+
     </>
   )
 }
