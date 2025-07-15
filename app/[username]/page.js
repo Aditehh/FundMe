@@ -3,13 +3,15 @@ import React from 'react'
 const Username = ({ params }) => {
   return (
     <>
-      {params.username}
-
-      <div className='cover w-full' >
+      <div className='cover w-full text-white' >
         <img className='relative object-cover w-full ' src="https://c10.patreonusercontent.com/4/patreon-media/p/campaign/319574/3a48afb63ec44896b29f632cbe0eec7c/eyJ3IjoxNjAwLCJ3ZSI6MX0%3D/5.jpg?token-hash=TxpINT7GexR_tz9VvM3Bh-pMPlHq1XaF47lZwjXskwc%3D&token-time=1754265600" alt="" />
-        <div className='absolute right-[48%] -bottom-14' >
-          <img className=' h-[110px] w-[150px] rounded-full ' src="https://cdn-useast1.kapwing.com/static/templates/crying-cat-meme-template-full-719a53dc.webp" alt="" />
+        <div className='absolute right-[48%] top-96 rounded-full' >
+          <img className='border-white border-2 h-[110px] w-[150px] rounded-full ' src="https://cdn-useast1.kapwing.com/static/templates/crying-cat-meme-template-full-719a53dc.webp" alt="" />
         </div>
+      </div>
+
+      <div className=''>
+        {params.username}
       </div>
     </>
   )
