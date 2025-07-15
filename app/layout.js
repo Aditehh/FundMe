@@ -17,11 +17,11 @@ export default function RootLayout({ children }) {
       <body className={inter.className}>
         <SessionWrapper>
           <Navbar />
-          <div className="min-h-[100vh]  bg-[#222831]">
+          <div className="min-h-screen bg-[#222831]">
             {children}
           </div>
           <Footer />
-          </SessionWrapper>
+        </SessionWrapper>
       </body>
     </html>
   );
