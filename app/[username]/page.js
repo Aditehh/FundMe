@@ -11,11 +11,13 @@ const Username = ({ params }) => {
       </div>
 
       <div className='flex-col text-white my-16 flex justify-center items-center'>
-        @{params.username}
-        <div>
+        <div className='font-bold text-xl'>
+          @{params.username}
+        </div>
+        <div className='text-slate-500 text-sm'>
           Creating Animated art for VTT's
         </div>
-        <div>
+        <div className='text-slate-500 text-sm'>
           3,34,345 members . 83 posts . $12,332/release
         </div>
       </div>
