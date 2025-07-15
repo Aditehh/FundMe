@@ -21,6 +21,18 @@ const Username = ({ params }) => {
           3,34,345 members . 83 posts . $12,332/release
         </div>
       </div>
+
+      <div className='PaymentsAndSupporters flex gap-10'>
+        <div className='supporters w-1/2 flex flex-col items-center bg-slate-600 '>
+          <ul>
+            <li>MEssi donated his whole networth to this worthless pissasheet</li>
+          </ul>
+        </div>
+
+        <div className="payments w-1/2 flex flex-col items-center bg-slate-600">
+          this the best mjcakdhsf
+        </div>
+      </div>
     </>
   )
 }

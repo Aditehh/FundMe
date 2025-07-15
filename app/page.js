@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -9,8 +10,9 @@ export default function Home() {
           A crowdfunding platform for developers. Get funded by your fans and followers. Start Now!!!
         </div>
         <div>
-          <button type="button" className=" text-gray-900 bg-gradient-to-r from-red-200 to-yellow-100 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-red-100 dark:focus:ring-yellow-400 font-medium rounded-lg text-lg px-5 py-2.5 text-center me-2 mb-2">Start Now</button>
-
+          <Link href={"/login"} >
+            <button type="button" className=" text-gray-900 bg-gradient-to-r from-red-200 to-yellow-100 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-red-100 dark:focus:ring-yellow-400 font-medium rounded-lg text-lg px-5 py-2.5 text-center me-2 mb-2">Start Now</button>
+          </Link>
           <button type="button" className=" text-gray-900 bg-gradient-to-r from-red-200 to-yellow-100 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-red-100 dark:focus:ring-yellow-100 font-medium rounded-lg text-lg px-5 py-2.5 text-center me-2 mb-2">Read More</button>
         </div>
       </div>
