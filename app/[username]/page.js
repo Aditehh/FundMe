@@ -21,6 +21,8 @@ const Username = ({ params }) => {
           3,34,345 members . 83 posts . $12,332/release
         </div>
 
+        
+
 
         <div className="PaymentsAndSupporters flex gap-4 w-[80%] mx-auto">
           {/* Supporters Section */}
