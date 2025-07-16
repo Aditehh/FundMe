@@ -21,7 +21,7 @@ const Username = ({ params }) => {
           3,34,345 members . 83 posts . $12,332/release
         </div>
 
-        
+
 
 
         <div className="PaymentsAndSupporters flex gap-4 w-[80%] mx-auto">
@@ -40,7 +40,10 @@ const Username = ({ params }) => {
           {/* Payments Section */}
           <div className="payments bg-slate-600 p-4 rounded-lg w-1/2">
             <h2 className="text-white font-bold mb-2">Payments</h2>
-            <p className="text-white text-sm">Payment options and history will appear here.</p>
+            <div className='flex gap-2'>
+              <input type="text" className='w-full p-3 rounded-lg bg-slate-800' placeholder='Enter the Amount' />
+              <button className='bg-slate-800 p-3 rounded-lg'>Pay</button>
+            </div>
           </div>
         </div>
       </div>
