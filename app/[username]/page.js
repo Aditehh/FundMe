@@ -43,10 +43,10 @@ const Username = ({ params }) => {
             <div className='flex gap-2 flex-col'>
               <div>
                 <input type="text" className='w-full p-3 rounded-lg bg-slate-800' placeholder='Enter the Name' />
-                </div>
-                <input type="text" className='w-full p-3 rounded-lg bg-slate-800' placeholder='Enter the Message' />
-                <input type="text" className='w-full p-3 rounded-lg bg-slate-800' placeholder='Enter the Amount' />
-                <button className='bg-slate-800 p-3 rounded-lg w-full'>Pay</button>
+              </div>
+              <input type="text" className='w-full p-3 rounded-lg bg-slate-800' placeholder='Enter the Message' />
+              <input type="text" className='w-full p-3 rounded-lg bg-slate-800' placeholder='Enter the Amount' />
+              <button className='bg-slate-800 p-3 rounded-lg w-full'>Pay</button>
 
 
             </div>
