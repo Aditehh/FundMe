@@ -40,9 +40,20 @@ const Username = ({ params }) => {
           {/* Payments Section */}
           <div className="payments bg-slate-600 p-4 rounded-lg w-1/2">
             <h2 className="text-white font-bold mb-2">Payments</h2>
-            <div className='flex gap-2'>
-              <input type="text" className='w-full p-3 rounded-lg bg-slate-800' placeholder='Enter the Amount' />
-              <button className='bg-slate-800 p-3 rounded-lg'>Pay</button>
+            <div className='flex gap-2 flex-col'>
+              <div>
+                <input type="text" className='w-full p-3 rounded-lg bg-slate-800' placeholder='Enter the Name' />
+                </div>
+                <input type="text" className='w-full p-3 rounded-lg bg-slate-800' placeholder='Enter the Message' />
+                <input type="text" className='w-full p-3 rounded-lg bg-slate-800' placeholder='Enter the Amount' />
+                <button className='bg-slate-800 p-3 rounded-lg w-full'>Pay</button>
+
+
+            </div>
+            <div className='flex gap-2 mt-5'>
+              <button className='bg-slate-800 p-3 rounded-lg'>$20</button>
+              <button className='bg-slate-800 p-3 rounded-lg'>$30</button>
+              <button className='bg-slate-800 p-3 rounded-lg'>$99</button>
             </div>
           </div>
         </div>
