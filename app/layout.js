@@ -17,7 +17,7 @@ export default function RootLayout({ children }) {
       <body className={`${inter.className} min-h-screen bg-[#222831]`}>
         <SessionWrapper>
           <Navbar />
-          <div>
+          <div className="min-h-screen">
             {children}
           </div>
           <Footer />

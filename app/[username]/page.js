@@ -26,7 +26,7 @@ const Username = ({ params }) => {
 
         <div className="PaymentsAndSupporters flex gap-4 w-[80%] mx-auto">
           {/* Supporters Section */}
-          <div className="supporters bg-slate-600 p-4 rounded-lg w-1/2 max-h-64 overflow-y-auto">
+          <div className="supporters bg-slate-600 p-4 rounded-lg w-1/2  overflow-y-auto">
             <h2 className="text-white font-bold mb-2">Supporters</h2>
             <ul className="text-white space-y-1 text-sm">
               <li>Messi donated a generous amount to this project</li>
