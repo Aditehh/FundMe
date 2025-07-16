@@ -14,10 +14,10 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={`${inter.className} min-h-screen bg-[#222831]`}>
         <SessionWrapper>
           <Navbar />
-          <div className="min-h-screen bg-[#222831]">
+          <div>
             {children}
           </div>
           <Footer />
