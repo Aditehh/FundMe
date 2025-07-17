@@ -71,7 +71,7 @@ const Dashboard = () => {
         <div>
           <label className="block mb-1 font-medium">Cover Picture</label>
           <input
-          required
+            required
             type="file"
             name="coverPic"
             accept="image/*"
@@ -79,6 +79,31 @@ const Dashboard = () => {
             className="w-full text-sm text-gray-300 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-indigo-600 hover:file:bg-indigo-700"
           />
         </div>
+
+        <div>
+          <label className="block mb-1 font-medium">Esewa id</label>
+          <input
+            type="text"
+            name="username"
+            // value={form.username}
+            // onChange={handleChange}
+            className="w-full px-3 py-2 rounded bg-[#23272a] border border-gray-600 focus:outline-none"
+            required
+          />
+        </div>
+
+           <div>
+          <label className="block mb-1 font-medium">Esewa MPIN</label>
+          <input
+            type="text"
+            name="username"
+            // value={form.username}
+            // onChange={handleChange}
+            className="w-full px-3 py-2 rounded bg-[#23272a] border border-gray-600 focus:outline-none"
+            required
+          />
+        </div>
+
 
         <button
           type="submit"
