@@ -81,24 +81,26 @@ const Dashboard = () => {
         </div>
 
         <div>
-          <label className="block mb-1 font-medium">Esewa id</label>
+          <label htmlFor='esewaid' className="block mb-1 font-medium">Esewa id</label>
           <input
+            value={form.esewaid ? form.esewaid : ""} onChange={handleChange}
             type="text"
-            name="username"
-            // value={form.username}
-            // onChange={handleChange}
-            className="w-full px-3 py-2 rounded bg-[#23272a] border border-gray-600 focus:outline-none"
+            id="esewaid"
+            name="esewaid"
+            placeholder="Enter your eSewa ID"
+            class="w-full px-3 py-2 rounded bg-[#23272a] border border-gray-600 focus:outline-none"
             required
+            className="w-full px-3 py-2 rounded bg-[#23272a] border border-gray-600 focus:outline-none"
           />
         </div>
 
-           <div>
-          <label className="block mb-1 font-medium">Esewa MPIN</label>
-          <input
+        <div>
+          <label htmlFor='esewasecret' className="block mb-1 font-medium">Esewa MPIN</label>
+          <input value={form.esewasecret ? form.esewasecret : ""} onChange={handleChange}
             type="text"
-            name="username"
-            // value={form.username}
-            // onChange={handleChange}
+            id="esewasecret"
+            name="esewasecret"
+            placeholder="Enter your MPIN"
             className="w-full px-3 py-2 rounded bg-[#23272a] border border-gray-600 focus:outline-none"
             required
           />

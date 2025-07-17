@@ -1,6 +1,6 @@
 import NextAuth from 'next-auth'
 import GitHubProvider from "next-auth/providers/github";
-import CredentialsProvider from "next-auth/providers/credentials"; 
+import CredentialsProvider from "next-auth/providers/credentials";
 
 
 
@@ -12,7 +12,7 @@ export const authOptions = NextAuth({
             clientId: process.env.GITHUB_ID,
             clientSecret: process.env.GITHUB_SECRET
         }),
-        
+
         CredentialsProvider({
             name: "Domain Account",
             async authorize(credentials, req) {
@@ -32,7 +32,12 @@ export const authOptions = NextAuth({
                 password: { label: "Password", type: "password" },
             },
         }),
-    ]
+    ],
+    callbacks: {
+        async signIn({ user, account, profile, email, credentials }) {
+
+        }
+    }
 })
 
 export { authOptions as GET, authOptions as POST };
