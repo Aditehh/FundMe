@@ -24,7 +24,7 @@ const Navbar = () => {
               <div
                 className="relative"
                 tabIndex={0}
-                onBlur={() => setTimeout(() => setshowdropdown(false), 100)}
+                // onBlur={() =>  setshowdropdown(false)}
               >
                 <button
                   onClick={() => setshowdropdown(!showdropdown)}
