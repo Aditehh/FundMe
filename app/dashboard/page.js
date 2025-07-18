@@ -2,16 +2,28 @@
 import React from 'react'
 import { useSession, signIn, signOut } from "next-auth/react"
 import { useRouter } from 'next/navigation'
-
+import { useState } from 'react'
+import { useEffect } from 'react'
 
 const Dashboard = () => {
+  const router = useRouter();
+  const { data: session, status } = useSession(); // ✅ Call all hooks unconditionally
 
-  const { data: session } = useSession()
+  useEffect(() => {
+    // Only redirect after session is confirmed and not loading
+    if (status === "unauthenticated") {
+      router.push("/");
+    }
+  }, [status, router]);
 
-  if (!session) {
-    const router = useRouter()
-    router.push('/')
+  if (status === "loading") {
+    return <div className="text-white text-center mt-10">Loading...</div>;
   }
+
+  // ✅ Don’t return early before calling hooks — always let hooks initialize first
+  if (!session) return null;
+
+
   return (
     <>
       <form
@@ -83,12 +95,11 @@ const Dashboard = () => {
         <div>
           <label htmlFor='esewaid' className="block mb-1 font-medium">Esewa id</label>
           <input
-            value={form.esewaid ? form.esewaid : ""} onChange={handleChange}
+            // value={form.esewaid ? form.esewaid : ""} onChange={handleChange}
             type="text"
             id="esewaid"
             name="esewaid"
             placeholder="Enter your eSewa ID"
-            class="w-full px-3 py-2 rounded bg-[#23272a] border border-gray-600 focus:outline-none"
             required
             className="w-full px-3 py-2 rounded bg-[#23272a] border border-gray-600 focus:outline-none"
           />
@@ -96,7 +107,8 @@ const Dashboard = () => {
 
         <div>
           <label htmlFor='esewasecret' className="block mb-1 font-medium">Esewa MPIN</label>
-          <input value={form.esewasecret ? form.esewasecret : ""} onChange={handleChange}
+          <input
+            //  value={form.esewasecret ? form.esewasecret : ""} onChange={handleChange}
             type="text"
             id="esewasecret"
             name="esewasecret"

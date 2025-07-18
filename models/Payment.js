@@ -1,4 +1,4 @@
-import mongoose, { Schema } from "mongoose";
+import mongoose, { Schema, model } from "mongoose";
 
 const PaymentSchema = new Schema({
     name: { type: String, required: true },
@@ -11,5 +11,4 @@ const PaymentSchema = new Schema({
     done: { type: Boolean, default: false }
 });
 
-const Payment = model("Payment", PaymentSchema);
-export default mongoose.models.Payment || Payment;
+export default mongoose.models.Payment || model("Payment", PaymentSchema);

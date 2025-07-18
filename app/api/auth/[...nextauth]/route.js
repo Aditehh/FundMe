@@ -38,18 +38,21 @@ export const authOptions = NextAuth({
     callbacks: {
         async signIn({ user, account, profile, email, credentials }) {
             if (account.provider === "github") {
-                const client = await mongoose.connect()
-                const currentUser = User.findone({ email: email })
+                const client = await mongoose.connect("mongodb://localhost:27017/javajuice")
+                const currentUser = User.findOne({ email: email })
                 if (!currentUser) {
                     const newUser = new User({
                         email: email,
-                        name: profile.name,
-                        username: profile.login,
-                        profilepic: profile.avatar_url
+                        username: email.split("@")[0],
                     })
                     await newUser.save()
+                    user.name = newUser.username
+                }
+                else{
+                    user.name = currentUser.username
                 }
             }
+            return true;
         }
     }
 })
