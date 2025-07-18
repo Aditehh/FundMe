@@ -39,10 +39,10 @@ export const authoptions = NextAuth({
         async signIn({ user, account, profile, email, credentials }) {
             if (account.provider == "github") {
                 await connectDb()
-                const client = await mongoose.connect("mongodb://localhost:27017/javajuice")
+                // const client = await mongoose.connect("mongodb://localhost:27017/javajuice")
                 const currentUser = await User.findOne({ email: email })
                 if (!currentUser) {
-                    // Create a new user
+                       // Create a new user
                     const newUser = await User.create({
                         email: user.email,
                         username: user.email.split("@")[0],
