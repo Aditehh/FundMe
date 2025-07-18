@@ -35,7 +35,9 @@ export const authOptions = NextAuth({
     ],
     callbacks: {
         async signIn({ user, account, profile, email, credentials }) {
-
+            if(account.providers == "github") {
+                const client = await mongoose.connect()
+            }
         }
     }
 })
