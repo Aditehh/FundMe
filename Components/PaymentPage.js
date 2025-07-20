@@ -72,14 +72,15 @@ const PaymentPage = (params) => {
                                     <input type="hidden" id="transaction_uuid" name="transaction_uuid" value={transaction_uuid} required />
                                     <input type="hidden" id="product_code" name="product_code" value="EPAYTEST" required />
                                     <button type='submit' className='bg-slate-800 p-3 rounded-lg'>$20</button>
-                                    <button className='bg-slate-800 p-3 rounded-lg'>$30</button>
-                                    <button className='bg-slate-800 p-3 rounded-lg'>$99</button>
-                                    {/* <input type="hidden" id="amount" name="amount" value={total_amount} required /> */}
+                                    <input type="hidden" id="amount" name="amount" value={total_amount} required />
                                     <input type="hidden" id="tax_amount" name="tax_amount" value="0" required />
                                     <input type="hidden" id="product_service_charge" name="product_service_charge" value="0" required />
                                     <input type="hidden" id="product_delivery_charge" name="product_delivery_charge" value="0" required />
                                     <input type="hidden" id="success_url" name="success_url" value="https://developer.esewa.com.np/success" required />
                                     <input type="hidden" id="failure_url" name="failure_url" value="https://developer.esewa.com.np/failure" required />
+                                    <button className='bg-slate-800 p-3 rounded-lg'>$30</button>
+                                    <button className='bg-slate-800 p-3 rounded-lg'>$99</button>
+                                    
 
 
 
