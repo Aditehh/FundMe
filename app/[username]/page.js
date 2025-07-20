@@ -1,7 +1,15 @@
 import React from 'react'
 import Link from 'next/link'
+import CryptoJS from 'crypto-js';
+import { v4 as uuidv4 } from 'uuid';
 
 const Username = ({ params }) => {
+  const transaction_uuid = uuidv4();
+  const message = ` total_amount =  ${total_amount}, transaction_uuid=${transaction_uuid},product_code=EPAYTEST`
+  var hash = CryptoJS.HmacSHA256(message, "8gBm/:&EnhH.1/q");
+  var hashInBase64 = CryptoJS.enc.Base64.stringify(hash);
+  console.log(hashInBase64)
+
   return (
     <>
       <div className='cover w-full text-white' >
@@ -46,10 +54,10 @@ const Username = ({ params }) => {
                 <input type="text" className='w-full p-3 rounded-lg bg-slate-800' placeholder='Enter the Name' />
               </div>
               <input type="text" className='w-full p-3 rounded-lg bg-slate-800' placeholder='Enter the Message' />
-              <input type="text" className='w-full p-3 rounded-lg bg-slate-800' placeholder='Enter the Amount' />
-              
+              <input type="text"  name="total_amount" value= {total_amount} className='w-full p-3 rounded-lg bg-slate-800' placeholder='Enter the Amount' />
+
               <Link href={"/esewa"} >
-              <button className='bg-slate-800 p-3 rounded-lg w-full'>Pay</button>
+                <button className='bg-slate-800 p-3 rounded-lg w-full'>Pay</button>
               </Link>
 
 
