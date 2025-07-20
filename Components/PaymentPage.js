@@ -5,21 +5,19 @@ import CryptoJS from 'crypto-js';
 import { v4 as uuidv4 } from 'uuid';
 
 const PaymentPage = (params) => {
-    const total_amount = 500
+    const total_amount = 2
     const productCode = "EPAYTEST";
     const transaction_uuid = uuidv4();
     const message = `total_amount=${total_amount},transaction_uuid=${transaction_uuid},product_code=EPAYTEST`
 
-    var hashInBase64 = CryptoJS.HmacSHA256(message, "8gBm/:&EnhH.1/q");
-    var signature = CryptoJS.enc.Base64.stringify(hashInBase64);
+    var hash = CryptoJS.HmacSHA256(message, "8gBm/:&EnhH.1/q");
+    var hashInBase64 = CryptoJS.enc.Base64.stringify(hash);
 
 
-    // console.log(hashInBase64)
+
     return (
         <>
-            < script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1/crypto-js.min.js" ></script>
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1/hmac-sha256.min.js"></script>
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1/enc-base64.min.js"></script>
+
 
 
             <div className='cover w-full text-white' >
@@ -62,30 +60,62 @@ const PaymentPage = (params) => {
                     <div className="payments bg-slate-600 p-4 rounded-lg w-1/2">
                         <h2 className="text-white font-bold mb-2">Payments</h2>
                         <div className='flex gap-2 flex-col'>
-                            <div>
-                                <input type="text" className='w-full p-3 rounded-lg bg-slate-800' placeholder='Enter the Name' />
-                            </div>
-                            <input type="text" className='w-full p-3 rounded-lg bg-slate-800' placeholder='Enter the Message' />
-                            <input type="text" name="total_amount" value={total_amount} className='w-full p-3 rounded-lg bg-slate-800' placeholder='Enter the Amount' />
+                            <form action="https://rc-epay.esewa.com.np/api/epay/main/v2/form" method='POST'>
+                                <div className='flex flex-col gap-2 mt-5'>
+                                    <div>
+                                        <input type="text" className='w-full p-3 rounded-lg bg-slate-800' placeholder='Enter the Name' />
+                                    </div>
+
+                                    <div>
+                                        <input type="text" className='w-full p-3 rounded-lg bg-slate-800' placeholder='Enter the Message' />
+                                    </div>
+                                    <div>
+                                        <input type="text" name="total_amount" id='"total_amount' value={total_amount} className='w-full p-3 rounded-lg bg-slate-800' placeholder='Enter the Amount' />
+                                    </div>
+                                </div>
+
+
+                                <div className='flex gap-2 mt-5'>
+                                    <input type="hidden" id="signature" name="signature" value={hashInBase64} required />
+                                    <input type="hidden" id="signed_field_names" name="signed_field_names" value="total_amount,transaction_uuid,product_code" required />
+                                    <input type="hidden" id="transaction_uuid" name="transaction_uuid" value={transaction_uuid} required />
+                                    <input type="hidden" id="product_code" name="product_code" value="EPAYTEST" required />
+
+                                    <button type='submit' total_amount="20" className='bg-slate-800 p-3 rounded-lg'>$20</button>
+                                    <button className='bg-slate-800 p-3 rounded-lg'>$30</button>
+                                    <button className='bg-slate-800 p-3 rounded-lg'>$99</button>
+
+
+                                    <input type="hidden" id="amount" name="amount" value={total_amount} required />
+                                    <input type="hidden" id="tax_amount" name="tax_amount" value="0" required />
+                                    <input type="hidden" id="product_service_charge" name="product_service_charge" value="0" required />
+                                    <input type="hidden" id="product_delivery_charge" name="product_delivery_charge" value="0" required />
+                                    <input type="hidden" id="success_url" name="success_url" value="https://developer.esewa.com.np/success" required />
+                                    <input type="hidden" id="failure_url" name="failure_url" value="https://developer.esewa.com.np/failure" required />
+
+
+
+                                </div>
+                            </form>
 
 
                             <button type='submit' className='bg-slate-800 p-3 rounded-lg w-full'>Pay</button>
 
                         </div>
-                        <form action="https://rc-epay.esewa.com.np/api/epay/main/v2/form" method='POST'>
+                        {/* <form action="https://rc-epay.esewa.com.np/api/epay/main/v2/form" method='POST'>
                             <div className='flex gap-2 mt-5'>
                                 <input type="hidden" id="signature" name="signature" value={hashInBase64} required />
                                 <input type="hidden" id="signed_field_names" name="signed_field_names" value="total_amount,transaction_uuid,product_code" required />
-                                <input type="hidden" id="transaction_uuid" name={transaction_uuid} value="241028" required />
-                                <input type="hidden" id="product_code" name="product_code" value={productCode} required />
+                                <input type="hidden" id="transaction_uuid" name="transaction_uuid" value={transaction_uuid} required />
+                                <input type="hidden" id="product_code" name="product_code" value="EPAYTEST" required />
 
                                 <button type='submit' className='bg-slate-800 p-3 rounded-lg'>$20</button>
                                 <button className='bg-slate-800 p-3 rounded-lg'>$30</button>
                                 <button className='bg-slate-800 p-3 rounded-lg'>$99</button>
 
 
-                                <input type="hidden" id="amount" name="amount" value="100" required />
-                                <input type="hidden" id="tax_amount" name="tax_amount" value="10" required />
+                                <input type="hidden" id="amount" name="amount" value={total_amount} required />
+                                <input type="hidden" id="tax_amount" name="tax_amount" value="0" required />
                                 <input type="hidden" id="product_service_charge" name="product_service_charge" value="0" required />
                                 <input type="hidden" id="product_delivery_charge" name="product_delivery_charge" value="0" required />
                                 <input type="hidden" id="success_url" name="success_url" value="https://developer.esewa.com.np/success" required />
@@ -94,7 +124,7 @@ const PaymentPage = (params) => {
 
 
                             </div>
-                        </form>
+                        </form> */}
 
 
                     </div>
