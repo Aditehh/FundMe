@@ -24,7 +24,7 @@ const Navbar = () => {
               <div
                 className="relative"
                 tabIndex={0}
-                // onBlur={() =>  setshowdropdown(false)}
+              // onBlur={() =>  setshowdropdown(false)}
               >
                 <button
                   onClick={() => setshowdropdown(!showdropdown)}
@@ -69,7 +69,7 @@ const Navbar = () => {
                     </li>
                     <li>
                       <a
-                        href={`/${session.user.name}`}
+                        href="/mypage"
                         className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
                       >
                         My page

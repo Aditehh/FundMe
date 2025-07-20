@@ -17,7 +17,7 @@ const esewa = () => {
 
 
             <form action="https://rc-epay.esewa.com.np/api/epay/main/v2/form" method="POST" >
-                <input type="text" id="amount" name="amount" value="100" required />
+                <input type="text" id="amount" name="amount" value={total_amount} required />
                 <input type="text" id="tax_amount" name="tax_amount" value="10" required />
                 <input type="text" id="total_amount" name="total_amount" value= {total_amount} required />
                 <input type="text" id="transaction_uuid" name="transaction_uuid" value={transaction_uuid} required />
