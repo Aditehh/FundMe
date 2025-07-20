@@ -1,4 +1,5 @@
 import React from 'react'
+import Link from 'next/link'
 
 const Username = ({ params }) => {
   return (
@@ -46,7 +47,10 @@ const Username = ({ params }) => {
               </div>
               <input type="text" className='w-full p-3 rounded-lg bg-slate-800' placeholder='Enter the Message' />
               <input type="text" className='w-full p-3 rounded-lg bg-slate-800' placeholder='Enter the Amount' />
+              
+              <Link href={"/esewa"} >
               <button className='bg-slate-800 p-3 rounded-lg w-full'>Pay</button>
+              </Link>
 
 
             </div>
