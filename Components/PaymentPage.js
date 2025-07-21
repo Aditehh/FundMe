@@ -5,24 +5,28 @@ import CryptoJS from 'crypto-js';
 import { v4 as uuidv4 } from 'uuid';
 import { useState } from 'react';
 
+
 const PaymentPage = (params) => {
+
+    const [signature, setsignature] = useState("")
 
     const [amount, setamount] = useState(0)
 
     useEffect(() => {
-      first
-    
-      
+        const msg = `total_amount=${amount},transaction_uuid=${transaction_uuid},product_code=EPAYTEST`;
+        const hash = CryptoJS.HmacSHA256(msg, "8gBm/:&EnhH.1/q");
+        const sign = CryptoJS.enc.Base64.stringify(hash);
+        setsignature(sign)
     }, [amount, transaction_uuid])
-    
+
 
     // const total_amount = 2
     const productCode = "EPAYTEST";
     const transaction_uuid = uuidv4();
-    const message = `total_amount=${total_amount},transaction_uuid=${transaction_uuid},product_code=EPAYTEST`
+    // const message = `total_amount=${total_amount},transaction_uuid=${transaction_uuid},product_code=EPAYTEST`
 
-    var hash = CryptoJS.HmacSHA256(message, "8gBm/:&EnhH.1/q");
-    var hashInBase64 = CryptoJS.enc.Base64.stringify(hash);
+    // var hash = CryptoJS.HmacSHA256(message, "8gBm/:&EnhH.1/q");
+    // var hashInBase64 = CryptoJS.enc.Base64.stringify(hash);
 
     return (
         <>
