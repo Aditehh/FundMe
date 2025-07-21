@@ -9,11 +9,11 @@ const PaymentPage = (params) => {
 
     const [amount, setamount] = useState()
 
-    const handlepayment = () => {
-        
+    const pay = () => {
+        total_amount = setamount
     }
 
-    const total_amount = 2
+    // const total_amount = 2
     const productCode = "EPAYTEST";
     const transaction_uuid = uuidv4();
     const message = `total_amount=${total_amount},transaction_uuid=${transaction_uuid},product_code=EPAYTEST`
@@ -86,7 +86,7 @@ const PaymentPage = (params) => {
                                     <input type="hidden" id="product_delivery_charge" name="product_delivery_charge" value="0" required />
                                     <input type="hidden" id="success_url" name="success_url" value="https://developer.esewa.com.np/success" required />
                                     <input type="hidden" id="failure_url" name="failure_url" value="https://developer.esewa.com.np/failure" required />
-                                    <button onClick={handlepayment} className='bg-slate-800 p-3 rounded-lg'>$30</button>
+                                    <button onClick={() => pay(setamount(amount = 30))} className='bg-slate-800 p-3 rounded-lg'>$30</button>
                                     <button className='bg-slate-800 p-3 rounded-lg'>$99</button>
 
 
