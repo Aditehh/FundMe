@@ -11,6 +11,10 @@ const Navbar = () => {
   const [showdropdown, setshowdropdown] = useState(false)
   const pathname = usePathname();
 
+  const changedropdown = () => {
+    setshowdropdown(true)
+  }
+
 
   return (
     <nav className='flex  bg-[#393E46] text-white h-14  items-center justify-between p-3'>
@@ -27,7 +31,8 @@ const Navbar = () => {
               // onBlur={() =>  setshowdropdown(false)}
               >
                 <button
-                  onClick={() => setshowdropdown(!showdropdown)}
+                  onClick={changedropdown}
+                  // onClick={() => setshowdropdown(!showdropdown)}
                   id="dropdownDefaultButton"
                   className="bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 text-gray-900 bg-gradient-to-r from-red-200 to-yellow-100 hover:bg-gradient-to-bl md:text-sm px-2.5 py-1 me-2 mb-2"
                   type="button"
