@@ -12,8 +12,16 @@ const Navbar = () => {
   const pathname = usePathname();
 
   const changedropdown = () => {
-    setshowdropdown(true)
+    // setshowdropdown(true)
+    if (showdropdown) {
+      setshowdropdown(false)
+    }
+    else {
+      setshowdropdown(true)
+    }
   }
+
+
 
 
   return (
@@ -28,7 +36,6 @@ const Navbar = () => {
               <div
                 className="relative"
                 tabIndex={0}
-              // onBlur={() =>  setshowdropdown(false)}
               >
                 <button
                   onClick={changedropdown}
