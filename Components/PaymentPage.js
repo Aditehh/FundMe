@@ -1,5 +1,5 @@
 "use client"
-import React from 'react'
+import React, { useEffect } from 'react'
 import Link from 'next/link'
 import CryptoJS from 'crypto-js';
 import { v4 as uuidv4 } from 'uuid';
@@ -7,11 +7,14 @@ import { useState } from 'react';
 
 const PaymentPage = (params) => {
 
-    const [amount, setamount] = useState()
+    const [amount, setamount] = useState(0)
 
-    const pay = () => {
-        total_amount = setamount
-    }
+    useEffect(() => {
+      first
+    
+      
+    }, [amount, transaction_uuid])
+    
 
     // const total_amount = 2
     const productCode = "EPAYTEST";
@@ -86,7 +89,7 @@ const PaymentPage = (params) => {
                                     <input type="hidden" id="product_delivery_charge" name="product_delivery_charge" value="0" required />
                                     <input type="hidden" id="success_url" name="success_url" value="https://developer.esewa.com.np/success" required />
                                     <input type="hidden" id="failure_url" name="failure_url" value="https://developer.esewa.com.np/failure" required />
-                                    <button onClick={() => pay(setamount(amount = 30))} className='bg-slate-800 p-3 rounded-lg'>$30</button>
+                                    <button onClick={() => setamount(30)} className='bg-slate-800 p-3 rounded-lg'>$30</button>
                                     <button className='bg-slate-800 p-3 rounded-lg'>$99</button>
 
 
