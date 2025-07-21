@@ -12,7 +12,7 @@ const Navbar = () => {
   const pathname = usePathname();
 
   const changedropdown = () => {
-    // setshowdropdown(true)
+    //wdropdo setshowdropdown(true)
     if (showdropdown) {
       setshowdropdown(false)
     }
@@ -20,10 +20,6 @@ const Navbar = () => {
       setshowdropdown(true)
     }
   }
-
-
-
-
   return (
     <nav className='flex  bg-[#393E46] text-white h-14  items-center justify-between p-3'>
       <Link href={"/"} > <div className="logo text-xl md:text-3xl md:p-8 text-[#DFD0B8] font-bold cursor-pointer">JavaJuice</div> </Link>
