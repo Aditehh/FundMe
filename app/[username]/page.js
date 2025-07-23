@@ -6,19 +6,36 @@ import { v4 as uuidv4 } from 'uuid';
 import { useState, useRef } from 'react';
 import { useSession } from 'next-auth/react';
 import PaymentPage from '@/Components/PaymentPage';
+import Script from 'next/script';
 
 
 const Username = (params) => {
+  const productCode = "EPAYTEST";
 
 
-  const uuid = uuidv4();
-  const totalAmount = 50
-  const message = `total_amount = {totalAmount}, transaction_uuid = { uuid }, product_code = EPAYTEST`;
-  const secret = "8gBm/:&EnhH.1/q"
-  var hash = CryptoJS.HmacSHA256(message, secret);
-  var hashInBase64 = CryptoJS.enc.Base64.stringify(hash);
-  // document.write(hashInBase64);
-  console.log(uuid)
+  const [totalAmount, setTotalAmount] = useState("");
+  // const [transactionUUID, setTransactionUUID] = useState("");
+  // const [productCode, setProductCode] = useState("EPAYTEST");
+  const [signature, setSignature] = useState("");
+
+  const [paymentform, setpaymentform] = useState({ name: "", message: "", amount: "" })
+
+  const transactionUUID = uuidv4();
+
+  useEffect(() => {
+    if (!totalAmount || !transactionUUID || !productCode) return;
+
+    const secret = "YOUR_SECRET_KEY"; // Replace with your actual secret key
+    const message = `total_amount=${totalAmount},transaction_uuid=${transactionUUID},product_code=${productCode}`;
+    const hash = CryptoJS.HmacSHA256(message, secret);
+    const hashBase64 = CryptoJS.enc.Base64.stringify(hash);
+    setSignature(hashBase64);
+  }, [totalAmount, transactionUUID]);
+
+
+  const handleChange = (e) => {
+    setpaymentform({ ...paymentform, [e.target.name]: e.target.value })
+  }
 
 
   return (
@@ -57,63 +74,44 @@ const Username = (params) => {
             </ul>
           </div>
 
+
           {/* Payments Section */}
 
           <div className="payments bg-slate-600 p-4 rounded-lg w-1/2">
             <h2 className="text-white font-bold mb-2">Payments</h2>
-            <div className='flex gap-2 flex-col'>
-              <div className='flex flex-col gap-2 mt-5'>
-
-
-                <form action="https://rc-epay.esewa.com.np/api/epay/main/v2/form" method="POST">
-
-
+            <form action="https://rc-epay.esewa.com.np/api/epay/main/v2/form" method="POST">
+              <div className='flex gap-2 flex-col'>
+                <div className='flex flex-col gap-2 mt-5'>
                   <div>
-                    <input type="text" className='w-full p-3 rounded-lg bg-slate-800' placeholder='Enter the Name' />
+                    <input type="text" onChange={handleChange} value={paymentform.name} className='w-full p-3 rounded-lg bg-slate-800' placeholder='Enter the Name' />
                   </div>
                   <div>
-                    <input type="text" className='w-full p-3 rounded-lg bg-slate-800' placeholder='Enter the Message' />
+                    <input type="text" onChange={handleChange} value={paymentform.message} className='w-full p-3 rounded-lg bg-slate-800' placeholder='Enter the Message' />
                   </div>
                   <div>
-                    <input type="text" name="total_amount" id='"total_amount' className='w-full p-3 rounded-lg bg-slate-800' placeholder='Enter the Amount' />
+                    <input type="text" value={totalAmount} onChange={(e) => setTotalAmount(e.target.value)} name="total_amount" id="total_amount" className='w-full p-3 rounded-lg bg-slate-800' placeholder='Enter the Amount' />
+
                   </div>
 
-                  <input type="hidden" id="amount" name="amount" value={totalAmount} required />
-                  <input type="hidden" id="tax_amount" name="tax_amount" value="10" required />
-                  <input type="hidden" id="total_amount" name="total_amount" value={totalAmount} required />
-                  <input type="hidden" id="transaction_uuid" name="transaction_uuid" value={uuid} required />
-                  <input type="hidden" id="product_code" name="product_code" value="EPAYTEST" required />
-                  <input type="hidden" id="product_service_charge" name="product_service_charge" value="0" required />
-                  <input type="hidden" id="product_delivery_charge" name="product_delivery_charge" value="0" required />
-                  <input type="hidden" id="success_url" name="success_url" value="https://developer.esewa.com.np/success" required />
-                  <input type="hidden" id="failure_url" name="failure_url" value="https://developer.esewa.com.np/failure" required />
-                  <input type="hidden" id="signed_field_names" name="signed_field_names" value="total_amount,transaction_uuid,product_code" required />
-                  <input type="hidden" id="signature" name="signature" value={hash} required />
-                  <button type='submit' className='bg-slate-800 p-3 rounded-lg w-full'>Pay</button>
 
-                </form>
+                  {/* Hidden fields */}
 
-                {/* <div>
-                  <input type="text" className='w-full p-3 rounded-lg bg-slate-800' placeholder='Enter the Name' />
+                  <input type="hidden" name="transaction_uuid" value={transactionUUID} required />
+                  <input type="hidden" name="signed_field_names" value="total_amount,transaction_uuid,product_code" required />
+                  <input type="hidden" name="signature" value={signature} required />
+
+                  <input type="hidden" name="amount" value={totalAmount} required />
+                  <input type="hidden" name="tax_amount" value="0" required />
+                  <input type="hidden" name="product_service_charge" value="0" required />
+                  <input type="hidden" name="product_delivery_charge" value="0" required />
+                  <input type="hidden" name="success_url" value="https://developer.esewa.com.np/success" required />
+                  <input type="hidden" name="failure_url" value="https://developer.esewa.com.np/failure" required />
+                  <button className='w-full p-3 rounded-lg bg-slate-800'>Pay</button>
                 </div>
-                <div>
-                  <input type="text" className='w-full p-3 rounded-lg bg-slate-800' placeholder='Enter the Message' />
-                </div>
-                <div>
-                  <input type="text" name="total_amount" id='"total_amount' className='w-full p-3 rounded-lg bg-slate-800' placeholder='Enter the Amount' />
-                </div> */}
-
-
-
               </div>
-              <div className='flex gap-2 mt-5'>
-                <button type="submit" className='bg-slate-800 p-3 rounded-lg'>$20</button>
-                <button type="submit" className='bg-slate-800 p-3 rounded-lg'>$30</button>
-                <button type="submit" className='bg-slate-800 p-3 rounded-lg'>$99</button>
-              </div>
-              {/* <button type='submit' className='bg-slate-800 p-3 rounded-lg w-full'>Pay</button> */}
-            </div>
+            </form>
           </div>
+
         </div>
       </div >
 
